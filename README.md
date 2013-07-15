@@ -6,7 +6,7 @@
 brew install v8
 ```
 
-It might take a while to download & compile. Test everything's working by running the `v8` command in your shell - you should see something like:
+Test everything's working by running the `v8` command in your shell - you should see something like:
 
 ```bash
 > V8 version 3.15.11 [sample shell]

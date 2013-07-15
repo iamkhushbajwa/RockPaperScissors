@@ -1,6 +1,6 @@
 class Game
 
-  COMBOS = {
+  PAIRS = {
     rock:     { beats: :scissors },
     paper:    { beats: :rock },
     scissors: { beats: :paper }
@@ -13,7 +13,7 @@ class Game
   def winner
     return nil if same_pick?
 
-    if COMBOS[@player1.pick][:beats] == @player2.pick
+    if PAIRS[@player1.pick][:beats] == @player2.pick
       @player1
     else
       @player2
