@@ -15,6 +15,8 @@ describe("Rock-Paper-Scissors", function() {
         player1.picks('rock');
         player2.picks('scissors');
         expect(game.winner()).toBe(player1);
+        expect(game.loser()).toBe(player2);
+        expect(game.endMessage()).toBe("rock beats scissors! Khush wins! Sorry Jasminder")
       });
 
       it('should beat lizard', function(){
