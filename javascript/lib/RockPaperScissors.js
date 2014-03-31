@@ -20,12 +20,16 @@ Game.prototype.PAIRS = {
 }
 
 Game.prototype.winner = function() {
-  if (this.player1.pick === this.player2.pick)
+  if (this.isSamePick())
     return null;
   else if(this.PAIRS[this.player1.pick].beats.indexOf(this.player2.pick) >= 0)
     return this.player1;
   else
     return this.player2;
+}
+
+Game.prototype.isSamePick = function(){
+  return this.player1.pick === this.player2.pick
 }
 
 Game.prototype.loser = function(){
