@@ -20,7 +20,7 @@ Game.prototype.PAIRS = {
 }
 
 Game.prototype.winner = function() {
-  if (this.player1.pick == this.player2.pick)
+  if (this.player1.pick === this.player2.pick)
     return null;
   else if(this.PAIRS[this.player1.pick].indexOf(this.player2.pick) >= 0)
     return this.player1;
@@ -29,7 +29,7 @@ Game.prototype.winner = function() {
 }
 
 Game.prototype.loser = function(){
-  return this.winner() == this.player1 ? this.player2 : this.player1
+  return this.winner() === this.player1 ? this.player2 : this.player1
 }
 
 Game.prototype.endMessage = function(){
