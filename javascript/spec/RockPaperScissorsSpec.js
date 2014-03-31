@@ -73,6 +73,14 @@ describe("Rock-Paper-Scissors", function() {
 
   });
 
+  describe('lizard', function(){
+    it('should beat spock', function(){
+      player1.picks('lizard');
+      player2.picks('spock');
+      expect(game.winner()).toBe(player1);
+    });
+  });
+
   describe('draws', function() {
 
     describe('any identical picks', function() {
