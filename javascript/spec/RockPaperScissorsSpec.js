@@ -16,7 +16,7 @@ describe("Rock-Paper-Scissors", function() {
         player2.picks('scissors');
         expect(game.winner()).toBe(player1);
         expect(game.loser()).toBe(player2);
-        expect(game.endMessage()).toBe("rock crushes scissors! Khush wins! Sorry Jasminder")
+        expect(game.endMessage()).toBe("Rock crushes Scissors! Khush wins! Sorry Jasminder")
       });
 
       it('should beat lizard', function(){
@@ -55,6 +55,7 @@ describe("Rock-Paper-Scissors", function() {
         player1.picks('paper');
         player2.picks('scissors');
         expect(game.winner()).toBe(player2);
+        expect(game.endMessage()).toBe("Scissors cut Paper! Jasminder wins! Sorry Khush")
       });
 
       it('should lose to lizard',function(){
@@ -75,6 +76,7 @@ describe("Rock-Paper-Scissors", function() {
         player1.picks('scissors');
         player2.picks('lizard');
         expect(game.winner()).toBe(player1)
+        expect(game.endMessage()).toBe("Scissors decapitate Lizard! Khush wins! Sorry Jasminder")
       });
 
       it('should lose to rock', function() {
@@ -101,6 +103,7 @@ describe("Rock-Paper-Scissors", function() {
         player1.picks('lizard');
         player2.picks('paper');
         expect(game.winner()).toBe(player1);
+        expect(game.endMessage()).toBe("Lizard eats Paper! Khush wins! Sorry Jasminder")
       });
 
       it('should lose to scissors', function(){
