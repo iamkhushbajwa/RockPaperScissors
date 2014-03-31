@@ -1,7 +1,9 @@
 PAIRS = {
-	"rock": "scissors",
-	"scissors": "paper",
-	"paper": "rock"
+	"scissors":  ["paper", "lizard"],
+  "paper":     ["rock", "spock"],
+  "rock":      ["lizard", "scissors"]
+  "lizard":    ["spock", "paper"]
+  "spock":     ["scissors", "rock"]
 }
 
 function Player(name) {
