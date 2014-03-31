@@ -12,11 +12,11 @@ function Game(player1, player2) {
 }
 
 Game.prototype.PAIRS = {
-	"scissors":  ["paper", "lizard"],
-  "paper":     ["rock", "spock"],
-  "rock":      ["lizard", "scissors"],
-  "lizard":    ["spock", "paper"],
-  "spock":     ["scissors", "rock"]
+	scissors:  ["paper", "lizard"],
+  paper:     ["rock", "spock"],
+  rock:      ["lizard", "scissors"],
+  lizard:    ["spock", "paper"],
+  spock:     ["scissors", "rock"]
 }
 
 Game.prototype.winner = function() {
