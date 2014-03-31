@@ -58,5 +58,10 @@ Game.prototype._verb = function(){
 Game.prototype.endMessage = function(){
   var winner = this.winner();
   var loser = this.loser();
-  return winner.pick + " " + this._verb() + " " + loser.pick + "! " + winner.name + " wins! Sorry " + loser.name;
+  return capitalise(winner.pick) + " " + this._verb() + " " + capitalise(loser.pick) + "! " + winner.name + " wins! Sorry " + loser.name;
+}
+
+function capitalise(string)
+{
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
