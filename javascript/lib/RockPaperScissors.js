@@ -1,8 +1,8 @@
 PAIRS = {
 	"scissors":  ["paper", "lizard"],
   "paper":     ["rock", "spock"],
-  "rock":      ["lizard", "scissors"]
-  "lizard":    ["spock", "paper"]
+  "rock":      ["lizard", "scissors"],
+  "lizard":    ["spock", "paper"],
   "spock":     ["scissors", "rock"]
 }
 
@@ -22,7 +22,7 @@ function Game(player1, player2) {
 Game.prototype.winner = function() {
   if (this.player1.pick == this.player2.pick)
     return null;
-  else if(PAIRS[this.player1.pick] == this.player2.pick)
+  else if(PAIRS[this.player1.pick].indexOf(this.player2.pick) >= 0)
     return this.player1;
   else
     return this.player2;
