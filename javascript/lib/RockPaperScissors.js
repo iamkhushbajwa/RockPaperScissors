@@ -1,11 +1,3 @@
-PAIRS = {
-	"scissors":  ["paper", "lizard"],
-  "paper":     ["rock", "spock"],
-  "rock":      ["lizard", "scissors"],
-  "lizard":    ["spock", "paper"],
-  "spock":     ["scissors", "rock"]
-}
-
 function Player(name) {
   this.name = name;
 }
@@ -19,10 +11,18 @@ function Game(player1, player2) {
   this.player2 = player2;
 }
 
+Game.prototype.PAIRS = {
+	"scissors":  ["paper", "lizard"],
+  "paper":     ["rock", "spock"],
+  "rock":      ["lizard", "scissors"],
+  "lizard":    ["spock", "paper"],
+  "spock":     ["scissors", "rock"]
+}
+
 Game.prototype.winner = function() {
   if (this.player1.pick == this.player2.pick)
     return null;
-  else if(PAIRS[this.player1.pick].indexOf(this.player2.pick) >= 0)
+  else if(this.PAIRS[this.player1.pick].indexOf(this.player2.pick) >= 0)
     return this.player1;
   else
     return this.player2;
