@@ -27,3 +27,13 @@ Game.prototype.winner = function() {
   else
     return this.player2;
 }
+
+Game.prototype.loser = function(){
+  return this.winner() == this.player1 ? this.player2 : this.player1
+}
+
+Game.prototype.endMessage = function(){
+  var winner = this.winner();
+  var loser = this.loser();
+  return winner.pick + " beats " + loser.pick + "! " + winner.name + " wins! Sorry " + loser.name;
+}
