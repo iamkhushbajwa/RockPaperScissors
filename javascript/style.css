@@ -25,19 +25,18 @@ h3{
   font-size: 35px;
 }
 
-footer {
-  background-color: #FF5959;
-  color: #F2F1F1;
-  text-align: center;
+#result{
   font-family: 'Monda', sans-serif;
+  font-size: 30px;
+  color: #F2F1F1;
 }
 
 #details{
-  padding: 10 10 10 10;
+  padding: 10px 10px 10px 10px;
 }
 
 #images{
-  padding: 20 20 20 20;
+  padding: 20px 20px 20px 20px;
 }
 
 #images img{
@@ -56,16 +55,23 @@ footer {
 
 .page-wrap {
   min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -220px; 
+  margin-bottom: -142px; 
 }
+
 .page-wrap:after {
   content: "";
   display: block;
 }
-.site-footer, .page-wrap:after {
-  /* .push must be the same height as footer */
-  height: 220px; 
+.site-footer, .push {
+  height: 142px; 
+}
+
+.site-footer {
+  background-color: #FF5959;
+  color: #F2F1F1;
+  text-align: center;
+  font-family: 'Monda', sans-serif;
+  margin-top: -142px;
 }
 
 /*
