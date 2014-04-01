@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock, Paper, Sissors, Lizard, Spock</title>
+    <link rel="stylesheet" type="text/css" href="javascript/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Monda|Cinzel:400,700' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+
+    <div class="page-wrap">
+
+      <header>
+        <div id="logo">
+          Rock, Paper, Scissors, Lizard, Spock
+        </div>
+      </header>
+
+      <div id="images">
+        <img src="images/rock.png"      data-pick="rock"/>
+        <img src="images/paper.png"     data-pick="paper"/>
+        <img src="images/scissors.png"  data-pick="scissors"/>
+        <img src="images/lizard.png"    data-pick="lizard"/>
+        <img src="images/spock.png"     data-pick="spock"/>
+      </div>
+
+      <div id="results-container">
+        <ul id="results"></ul>
+      </div>
+
+      <div id="scoreboard">
+        <div id="player1">
+          <h3></h3>
+          <span class="score"></span>
+        </div>
+        <div id="player2">
+          <h3></h3>
+          <span class="score"></span>
+        </div>
+      </div>
+
+      <div id="sound"></div>
+      <div class="push"></div>
+
+    </div>
+
+    <footer class="site-footer">
+      <div id="details">
+        <p>You know the game of Rock, Paper, Scissors, but did you not know that there were also Lizard and Spock? You have been playing it wrong all these years!</p>
+        <p>The rules are simple; scissors cut paper, paper covers rock, rock crushes lizard, lizard poisons Spock, spock smashes scissors, scissors decapitate lizard, lizard eats paper, paper disproves Spock, Spock vaporizes rock and rock crushes scissors. See, Simple!</p>
+        <h3>Now play 'til your heart's content!</h3>
+      </div>
+    </footer>
+    <script src="javascript/lib/Game.js"></script>
+    <script src="javascript/lib/Player.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        var player1 = new Player("Human");
+        var player2 = new Player("Computer");
+        var game = new Game(player1,player2);
+        $('#player1 h3').html(player1.name);
+        $('#player2 h3').html(player2.name);
+        $('#player1 span').html(0);
+        $('#player2 span').html(0);
+
+        $('#images img').on('click', function(){
+          player1.picks($(this).data('pick'));
+          var p2Pick = ['rock', 'paper', 'scissors', 'lizard', 'spock'][Math.floor(Math.random() * 5)];
+          player2.picks(p2Pick);
+
+          if(game.winner()){
+            playSound('sounds/' + game.winner().pick + "_" + game.loser().pick + '.m4a')
+            if(game.winner().name == player1.name){
+              var p1_score = parseInt($("#player1 span").html(), 10);
+              $('#player1 span').html(p1_score + 1);
+            }else{
+              var p2_score = parseInt($("#player2 span").html(), 10);
+              $('#player2 span').html(p2_score + 1);
+            }
+          }
+
+          $('<li>' + game.endMessage() + '</li>').prependTo('#results').slideDown();
+          $('#results li:nth-child(6)').fadeOut(function(){
+            $(this).remove();
+          });
+        });
+      });
+    </script>
+
+    <script>
+    function playSound(url){   
+      $('#sound').html('<embed src='+url+' hidden=true autostart=true loop=false>');
+    }
+    </script>
+  </body>
+</html>

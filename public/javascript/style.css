@@ -1,0 +1,118 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+html, body {
+  height: 100%;
+  background-color: #003A6F;
+  text-align: center;
+  min-width: 1000px;
+  color: F2F1F1;
+}
+
+header{
+  background-color: #FFC56C;
+}
+
+#player1, #player2{
+  padding-top:20px;
+  width:50%;
+}
+
+#player1{
+  float:left;
+}
+
+#player2{
+  float:right;
+}
+
+.score{
+  font-size: 35px;
+  font-family: 'Monda', sans-serif;
+  color: #F2F1F1;
+}
+
+#logo{
+  padding: 10 10 10 10;
+  color: #003A6F;
+  font-size: 50px;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+}
+
+h3{
+  color: white;
+  font-size: 35px;
+  font-family: 'Monda', sans-serif;
+  padding-top: 10px;
+}
+
+#results-container{
+  width: 100%;
+  height: 180px;
+}
+
+#results{
+  font-family: 'Monda', sans-serif;
+  font-size: 30px;
+  color: #F2F1F1;
+}
+
+#results li{
+  display: none;
+}
+
+#details{
+  padding: 10px 10px 10px 10px;
+}
+
+#images{
+  padding: 20px 20px 20px 20px;
+}
+
+#images img{
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.5s;
+  border-radius: 100px;
+  length:18%;
+  width:18%;
+}
+
+#images img:hover{
+  opacity: 1;
+}
+
+* {
+  margin: 0;
+}
+
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -142px; 
+}
+
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .push {
+  height: 142px; 
+}
+
+.site-footer {
+  background-color: #FF5959;
+  color: #F2F1F1;
+  text-align: center;
+  font-family: 'Monda', sans-serif;
+  margin-top: -142px;
+}
+
+/*
+#FFC56C
+#6EC5E9
+#003A6F
+#FF5959
+#F2F1F1
+#FFFFFF
+*/
