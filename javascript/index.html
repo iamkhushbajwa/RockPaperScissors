@@ -22,10 +22,10 @@
         <img src="images/lizard.png"    data-pick="lizard"/>
         <img src="images/spock.png"     data-pick="spock"/>
       </div>
-      <div id="result">
-      </div>
+      <div id="result"></div>
+      <div id="sound"></div>
       <div class="push"></div>
-      
+
     </div>
 
     <footer class="site-footer">
@@ -47,9 +47,18 @@
           player1.picks($(this).data('pick'));
           var p2Pick = ['rock', 'paper', 'scissors', 'lizard', 'spock'][Math.floor(Math.random() * 5)];
           player2.picks(p2Pick);
+          if(game.winner()){
+            playSound('sounds/' + game.winner().pick + "_" + game.loser().pick + '.m4a')
+          }
           $('#result').html(game.endMessage());
         });
       });
+    </script>
+
+    <script>
+    function playSound(url){   
+      document.getElementById("sound").innerHTML="<embed src='"+url+"' hidden=true autostart=true loop=false>";
+    }
     </script>
 	</body>
 </html>
