@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rock, Paper, Sissors, Lizard, Spock</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Monda|Cinzel:400,700' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+
+		<header>
+			<div id="logo">
+				Rock, Paper, Scissors, Lizzard, Spock
+			</div>
+		</header>
+
+    <div class="page-wrap">
+      <div id="images">
+        <img src="images/rock.png"      data-pick="rock"/>
+        <img src="images/paper.png"     data-pick="paper"/>
+        <img src="images/scissors.png"  data-pick="scissors"/>
+        <img src="images/lizard.png"    data-pick="lizard"/>
+        <img src="images/spock.png"     data-pick="spock"/>
+      </div>
+      <div id="result">
+      Hello
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div id="details">
+        <p>You know the game of Rock, Paper, Scissors, but did you not know that there were also Lizard and Spock? You have been playing it wrong all these years!</p>
+        <p>The rules are simple; scissors cut paper, paper covers rock, rock crushes lizard, lizard poisons Spock, spock smashes scissors, scissors decapitate lizard, lizard eats paper, paper disproves Spock, Spock vaporizes rock and rock crushes scissors. See, Simple!</p>
+        <h3>Now play 'til your heart's content!</h3>
+      </div>
+    </footer>
+    <script src="lib/Game.js"></script>
+    <script src="lib/Player.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        var player1 = new Player("Human");
+        var player2 = new Player("Computer");
+        var game = new Game(player1,player2);
+        $('#images img').on('click', function(){
+          player1.picks($(this).data('pick'));
+          player2.picks('scissors');
+          alert(game.endMessage());
+        });
+      });
+    </script>
+	</body>
+</html>
