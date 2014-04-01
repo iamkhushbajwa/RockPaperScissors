@@ -156,6 +156,12 @@ describe("Rock-Paper-Scissors", function() {
         });
         expect(drawGameResults).toEqual([null, null, null]);
       });
+
+      it('should return a draw message', function(){
+        player1.picks('rock');
+        player2.picks('rock');
+        expect(game.endMessage()).toBe("Draw")
+      });
     });
   });
 
