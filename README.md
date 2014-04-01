@@ -9,3 +9,4 @@ Week 7 - we are learning to use JavaScript, so in this exercise we port a Ruby i
 * HMTL
 * CSS
 * Ruby (Sinatra & Shotgun gems)
+* Git (GitHub & Heroku)
