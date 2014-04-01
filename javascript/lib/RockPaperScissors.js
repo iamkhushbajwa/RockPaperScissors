@@ -39,7 +39,7 @@ Game.prototype.loser = function(){
 Game.prototype.VERBS = {
   scissors_paper:   "cut",
   paper_rock:       "covers",
-  rock_lizard:      "crushes",
+  rock_lizard:      "squashes",
   lizard_spock:     "poisons",
   spock_scissors:   "smashes",
   scissors_lizard:  "decapitate",
