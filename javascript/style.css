@@ -53,6 +53,10 @@ h3{
   color: #F2F1F1;
 }
 
+#result li{
+  display: none;
+}
+
 #details{
   padding: 10px 10px 10px 10px;
 }
