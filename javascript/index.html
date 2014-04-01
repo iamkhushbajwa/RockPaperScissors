@@ -22,7 +22,11 @@
         <img src="images/lizard.png"    data-pick="lizard"/>
         <img src="images/spock.png"     data-pick="spock"/>
       </div>
-      <ul id="result"></ul>
+
+      <div id="results-container">
+        <ul id="results"></ul>
+      </div>
+
       <div id="scoreboard">
         <div id="player1">
           <h3></h3>
@@ -75,7 +79,10 @@
             }
           }
 
-          $('<li>' + game.endMessage() + '</li>').prependTo('#result').slideDown();
+          $('<li>' + game.endMessage() + '</li>').prependTo('#results').slideDown();
+          $('#results li:nth-child(6)').fadeOut(function(){
+            $(this).remove();
+          });
         });
       });
     </script>
