@@ -22,7 +22,7 @@
         <img src="images/lizard.png"    data-pick="lizard"/>
         <img src="images/spock.png"     data-pick="spock"/>
       </div>
-      <div id="result"></div>
+      <ul id="result"></ul>
       <div id="scoreboard">
         <div id="player1">
           <h3></h3>
@@ -75,8 +75,7 @@
             }
           }
 
-          
-          $('#result').html(game.endMessage());
+          $('<li>' + game.endMessage() + '</li>').prependTo('#result').slideDown();
         });
       });
     </script>
