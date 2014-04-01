@@ -45,7 +45,7 @@
           player1.picks($(this).data('pick'));
           var p2Pick = ['rock', 'paper', 'scissors', 'lizard', 'spock'][Math.floor(Math.random() * 5)];
           player2.picks(p2Pick);
-          alert(game.endMessage());
+          $('#result').html(game.endMessage());
         });
       });
     </script>
