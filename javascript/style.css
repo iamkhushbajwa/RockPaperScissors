@@ -13,6 +13,25 @@ header{
   background-color: #FFC56C;
 }
 
+#player1, #player2{
+  padding-top:20px;
+  width:300px;
+}
+
+#player1{
+  float:left;
+}
+
+#player2{
+  float:right;
+}
+
+.score{
+  font-size: 35px;
+  font-family: 'Monda', sans-serif;
+  color: #F2F1F1;
+}
+
 #logo{
   padding: 10 10 10 10;
   color: #003A6F;
@@ -22,7 +41,9 @@ header{
 }
 
 h3{
+  color: white;
   font-size: 35px;
+  font-family: 'Monda', sans-serif;
 }
 
 #result{

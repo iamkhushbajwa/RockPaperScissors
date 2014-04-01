@@ -23,6 +23,17 @@
         <img src="images/spock.png"     data-pick="spock"/>
       </div>
       <div id="result"></div>
+      <div id="scoreboard">
+        <div id="player1">
+          <h3></h3>
+          <span class="score"></span>
+        </div>
+        <div id="player2">
+          <h3></h3>
+          <span class="score"></span>
+        </div>
+      </div>
+
       <div id="sound"></div>
       <div class="push"></div>
 
@@ -43,12 +54,23 @@
         var player1 = new Player("Human");
         var player2 = new Player("Computer");
         var game = new Game(player1,player2);
+        $('#player1 h3').html(player1.name);
+        $('#player2 h3').html(player2.name);
+        $('#player1 span').html(0);
+        $('#player2 span').html(0);
         $('#images img').on('click', function(){
           player1.picks($(this).data('pick'));
           var p2Pick = ['rock', 'paper', 'scissors', 'lizard', 'spock'][Math.floor(Math.random() * 5)];
           player2.picks(p2Pick);
           if(game.winner()){
             playSound('sounds/' + game.winner().pick + "_" + game.loser().pick + '.m4a')
+          }
+          if(game.winner().name == player1.name){
+            var p1_score = parseInt($("#player1 span").html(), 10);
+            $('#player1 span').html(p1_score + 1);
+          }else{
+            var p2_score = parseInt($("#player2 span").html(), 10);
+            $('#player2 span').html(p2_score + 1);
           }
           $('#result').html(game.endMessage());
         });
