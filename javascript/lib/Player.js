@@ -4,4 +4,4 @@ function Player(name) {
 
 Player.prototype.picks = function(pick) {
   this.pick = pick;
-}
+};
